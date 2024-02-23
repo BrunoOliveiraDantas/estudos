@@ -1,17 +1,20 @@
-def sol():
-    s = input()
-    k = int(input())    
-    
-    for  digit in s:
-        if digit != "1":
-            print(digit)
-            break
-        if k == 1:
-            print("1")
-            break
-        k -= 1
-        continue
+def solve(S, K):
+    for c in S:
+        if c != '1':
+            return c
 
+        K -= 1
+        if K == 0:
+            break
+
+    return '1'
+
+def main():
+    S = input()
+    K = int(input())
     
-if __name__== "__main__":
-    sol()
+    result = solve(S, K)
+    print(result)
+
+if __name__ == "__main__":
+    main()
